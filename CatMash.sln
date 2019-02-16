@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatMash.Web", "CatMash.Web\CatMash.Web.csproj", "{73913C7B-742D-4DFE-8E06-A02325CCF219}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityMash.Models", "EntityMash.Models\EntityMash.Models.csproj", "{33DA583F-1F63-426F-A5D4-EF787331EA30}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityMash.Services", "EntityMash.Services\EntityMash.Services.csproj", "{4B26CDC2-6DBE-47BD-B2AF-996FCE05A918}"
@@ -15,6 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73913C7B-742D-4DFE-8E06-A02325CCF219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73913C7B-742D-4DFE-8E06-A02325CCF219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73913C7B-742D-4DFE-8E06-A02325CCF219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73913C7B-742D-4DFE-8E06-A02325CCF219}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33DA583F-1F63-426F-A5D4-EF787331EA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33DA583F-1F63-426F-A5D4-EF787331EA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33DA583F-1F63-426F-A5D4-EF787331EA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
