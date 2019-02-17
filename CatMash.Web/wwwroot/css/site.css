@@ -1,5 +1,4 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
 }
 
@@ -24,6 +23,67 @@
 /* QR code generator */
 #qrCode {
     margin: 15px;
+}
+
+.thumbnail {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -ms-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.03);
+    /*opacity: 0.5;*/
+}
+
+    .thumbnail h6 {
+        z-index: 100;
+        opacity: 1;
+        margin-top: 89%;
+        margin-left: 64%;
+        width: fit-content;
+        color: #ffffff !important;
+    }
+
+    .thumbnail img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: auto;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+        .thumbnail img.portrait {
+            width: 100%;
+            height: auto;
+        }
+
+.row h1 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.like {
+    width: 20%;
+}
+
+.card .img-top {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99;
+}
+
+.card:hover .img-top {
+    display: inline;
 }
 
 /* Hide/rearrange for smaller screens */

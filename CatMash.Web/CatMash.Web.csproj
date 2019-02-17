@@ -5,11 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Data\cats.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EntityMash.Services\EntityMash.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Data\cats.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\images\like.png" />
   </ItemGroup>
 
 </Project>

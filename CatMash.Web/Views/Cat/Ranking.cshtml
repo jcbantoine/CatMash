@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CatViewModel>
+@{
+    ViewData["Title"] = "Ranking";
+
+}
+</br>
+<h1>
+    Ranking
+    <small class="text-muted">here are the cutest cats ever</small>
+</h1>
+
+<div class="container-fluid">
+    <div class="row justify-content-around">
+        @foreach (var item in Model)
+        {
+            <div class="card thumbnail border-primary">
+                <img src="@item.ImageUrl">
+                <h6 class="badge-secondary badge-pill">@item.Votes likes</h6>
+            </div>
+        }
+    </div>
+</div>

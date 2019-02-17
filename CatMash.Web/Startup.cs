@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using EntityMash.Services;
+using EntityMash.Services.Interop;
 
 namespace CatMash.Web
 {
@@ -22,6 +24,8 @@ namespace CatMash.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<IEntityMashService, EntityMashService>();
+            services.AddSingleton<IEntitiesRepository>(s=> new EntitiesRuntimeJsonRepository("Data/cats.json"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +47,7 @@ namespace CatMash.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Cat}/{action=Vote}/{id?}");
             });
         }
     }

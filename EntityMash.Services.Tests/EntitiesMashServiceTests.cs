@@ -1,6 +1,5 @@
 using EntityMash.Models;
 using EntityMash.Services.Interop;
-using EntityMash.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;

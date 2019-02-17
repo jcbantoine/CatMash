@@ -37,10 +37,11 @@ namespace EntityMash.Services
         /// </summary>
         public void Update(Entity entity)
         {
-            if (entities_.SingleOrDefault(c => c.Identifier == entity.Identifier) != null)
+            var oldEntity = entities_.SingleOrDefault(c => c.Identifier == entity.Identifier);
+            if ( oldEntity != null)
             {
-                var index = entities_.IndexOf(entity);
-                entities_[index] = entity;
+                var index = entities_.Remove(oldEntity);
+                entities_.Add(entity);
             }
         }
 
