@@ -11,20 +11,21 @@
 </br>
 <div class="container-fluid">
     <div class="row justify-content-around">
-        <a href="@Url.Action("AddVote", "Cat", new { identifier = Model.Item1.Identifier})">
-            <div class="card versus thumbnail border-primary">
-                <img src="@Model.Item1.ImageUrl" alt="Card Back">
-                <img src="~/images/like.png" class="img-top" alt="Card Front">
-            </div>
-        </a>
-        <h1 class="col-sm-12 col-md-4">VS</h1>
-        <form action="AddVote">
-            <div class="card versus thumbnail border-primary">
-                <img src="@Model.Item2.ImageUrl" alt="Card Back">
-                <img src="~/images/like.png" class="img-top" alt="Card Front">
-            </div>
-            <input type="text" name="identifier" value="@Model.Item2.Identifier" />
-            <input type="submit"/>
-        </form>
+        @*@if (@Model?.Item1?.Identifier != null && @Model?.Item2?.Identifier != null)
+        {*@
+            <a href="/Cat/AddVote?identifier=@Model.Item1.Identifier">
+                <div class="card versus thumbnail border-primary">
+                    <img src="@Model.Item1.ImageUrl" alt="Card Back">
+                    <img src="~/images/like.png" class="img-top" alt="Card Front">
+                </div>
+            </a>
+            <h1 class="col-sm-12 col-md-4">VS</h1>
+            <a href="/Cat/AddVote?identifier=@Model.Item2.Identifier">
+                <div class="card versus thumbnail border-primary">
+                    <img src="@Model.Item2.ImageUrl" alt="Card Back">
+                    <img src="~/images/like.png" class="img-top" alt="Card Front">
+                </div>
+            </a>
+        @* } *@
     </div>
 </div>

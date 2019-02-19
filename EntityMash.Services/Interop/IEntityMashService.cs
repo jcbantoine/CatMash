@@ -23,6 +23,6 @@ namespace EntityMash.Services.Interop
         /// Add vote for an entity.
         /// </summary>
         /// <param name="entity"></param>
-        void AddVote(Entity entity);
+        void AddVote(string identifier);
     }
 }

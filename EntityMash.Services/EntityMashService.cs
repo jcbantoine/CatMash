@@ -50,8 +50,9 @@ namespace EntityMash.Services
         /// Implementation of <see cref="IEntityMashService.AddVote(Entity)"/>
         /// </summary>
         /// <param name="entity"></param>
-        public void AddVote(Entity entity)
+        public void AddVote(string identifier)
         {
+            var entity = entitiesRepository_.Entities.SingleOrDefault(e => e.Identifier == identifier);
             entity.Votes++;
             entitiesRepository_.Update(entity);
         }

@@ -18,16 +18,13 @@ namespace CatMash.Web.Controllers
 
         public IActionResult AddVote(string identifier)
         {
-            var catViewModel = new CatViewModel() { Identifier = identifier };
-            var entity = Mapper.ToModel(catViewModel);
-            entityMashService_.AddVote(entity);
-            return View("Vote");
+            entityMashService_.AddVote(identifier);
+            return View("Vote", GetVersus());
         }
 
         public IActionResult Vote()
         {
-            var models = entityMashService_.GetVersus();
-            var catViewModels = new Tuple<CatViewModel, CatViewModel>(Mapper.ToViewModel(models.Item1), Mapper.ToViewModel(models.Item2));
+            var catViewModels = GetVersus();
             return View(catViewModels);
         }
 
@@ -37,5 +34,12 @@ namespace CatMash.Web.Controllers
             return View(entityMashService_.GetRanking().Select(i => Mapper.ToViewModel(i)));
         }
 
+        private Tuple<CatViewModel, CatViewModel> GetVersus()
+        {
+            var models = entityMashService_.GetVersus();
+            var catViewModels =
+                new Tuple<CatViewModel, CatViewModel>(Mapper.ToViewModel(models.Item1), Mapper.ToViewModel(models.Item2));
+            return catViewModels;
+        }
     }
 }

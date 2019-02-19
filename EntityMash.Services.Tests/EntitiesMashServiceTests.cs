@@ -37,17 +37,19 @@ namespace EntityMash.Services.Tests
         public void EntitiesMashService_AddVote()
         {
             //init
-            var entityToUpdate = new Entity("") { Votes = 2 };
+            var entityToUpdate = new Entity("a") { Votes = 2 };
             var entities = new[] { entityToUpdate, new Entity("") { Votes = 0 }, new Entity("") { Votes = 5 } };
 
             var entitiesRepositoryMoq = new Mock<IEntitiesRepository>();
+            entitiesRepositoryMoq.Setup(e => e.Entities)
+                .Returns(entities);
             entitiesRepositoryMoq
                 .Setup(i => i.Update(It.IsAny<Entity>()))
                 .Callback((Entity entity) => { entities[0] = entity; });
 
             //system-under-test
             var entitiesMashService = new EntityMashService(entitiesRepositoryMoq.Object);
-            entitiesMashService.AddVote(entityToUpdate);
+            entitiesMashService.AddVote("a");
 
             //assert
             entitiesRepositoryMoq.VerifyAll();
