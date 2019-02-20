@@ -64,7 +64,7 @@ namespace EntityMash.Services
         private Entity GetARandomEntity()
         {
             var random = new Random();
-            var index = random.Next(entitiesRepository_.Entities.Count() - 1);
+            var index = random.Next(entitiesRepository_.Entities.Count());
             return entitiesRepository_.Entities.ElementAt(index);
         }
     }
