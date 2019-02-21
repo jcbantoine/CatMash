@@ -11,8 +11,6 @@
 </br>
 <div class="container-fluid">
     <div class="row justify-content-around">
-        @*@if (@Model?.Item1?.Identifier != null && @Model?.Item2?.Identifier != null)
-        {*@
             <a href="/Cat/AddVote?identifier=@Model.Item1.Identifier">
                 <div class="card versus thumbnail border-primary">
                     <img src="@Model.Item1.ImageUrl" alt="Card Back">
@@ -26,6 +24,5 @@
                     <img src="~/images/like.png" class="img-top" alt="Card Front">
                 </div>
             </a>
-        @* } *@
     </div>
 </div>
