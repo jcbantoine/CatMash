@@ -2,16 +2,16 @@
 using EntityMash.Database.Models;
 using EntityMash.Models;
 
-namespace EntityMash.Database
+namespace EntityMash.Database.Mapping
 {
     public static class ModelsExtensions
     {
-        public static EntityDB ToDBModel(this Entity entity)
+        public static DBEntity ToDBModel(this Entity entity)
         {
-            return new EntityDB { Identifier = entity.Identifier, ImageUrl = entity.ImageUrl.ToString(), Votes = entity.Votes };
+            return new DBEntity { Identifier = entity.Identifier, ImageUrl = entity.ImageUrl.ToString(), Votes = entity.Votes };
         }
 
-        public static Entity ToModel(this EntityDB entityDb)
+        public static Entity ToModel(this DBEntity entityDb)
         {
             return new Entity(entityDb.Identifier) { ImageUrl = new Uri(entityDb.ImageUrl), Votes = entityDb.Votes };
         }

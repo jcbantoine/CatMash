@@ -2,7 +2,7 @@
 
 namespace EntityMash.Database.Models
 {
-    public class EntityDB
+    public class DBEntity
     {
         [Key]
         public string Identifier { get; set; }

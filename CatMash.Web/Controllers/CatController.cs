@@ -31,14 +31,14 @@ namespace CatMash.Web.Controllers
         public IActionResult Ranking()
         {
 
-            return View(entityMashService_.GetRanking().Select(i => Mapper.ToViewModel(i)));
+            return View(entityMashService_.GetRanking().Select(i => i.ToViewModel()));
         }
 
         private Tuple<CatViewModel, CatViewModel> GetVersus()
         {
             var models = entityMashService_.GetVersus();
             var catViewModels =
-                new Tuple<CatViewModel, CatViewModel>(Mapper.ToViewModel(models.Item1), Mapper.ToViewModel(models.Item2));
+                new Tuple<CatViewModel, CatViewModel>(models.Item1.ToViewModel(), models.Item2.ToViewModel());
             return catViewModels;
         }
     }

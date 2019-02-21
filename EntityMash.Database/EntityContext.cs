@@ -17,7 +17,7 @@ namespace EntityMash.Database
         {
         }
 
-        public DbSet<EntityDB> Entities { get; set; }
+        public DbSet<DBEntity> Entities { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,4 +1,5 @@
 ﻿using EntityMash.Database;
+using EntityMash.Database.Mapping;
 using EntityMash.Models;
 using EntityMash.Services.Interop;
 using System.Collections.Generic;
